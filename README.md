@@ -4,21 +4,19 @@
 Using new skillsets to create a weather dashboard to plan a trip accordingly.
 
 ## Acceptance Criteria
-- I am using a daily planner to create a schedule
-- I open the planner
-- The current day is displayed at the top of the calendar
-- I am able to scroll down
-- I added time blocks for standard business hours of 9am to 5pm
-- I added contents to each time block is color-coded to indicate whether it is in the past, present, or future
-- I click into a time block
-- I can enter an event to planner
-- When I click the save button for that time block
-- I am then able to find the text for that event is saved in local storage
-- I refresh the page
-- the saved events persist
+- When I on the weather dashboard it form inputs
+- I can search for a city
+- I am presented with current and future conditions for that city
+- This then can be added to the search history
+- I can view current weather conditions for that city
+- I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the the wind speed
+- I can view future weather conditions for that city
+- I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+- I can click on a city in the search history
+- I am again presented with current and future conditions for that city
 
-## Screenshot of planner
-![work day schedule](screencapture-127-0-0-1-5501-index-html-2023-11-06-23_04_33.png)
+## Screenshot of dashboard
+![weather dashboard](screencapture-127-0-0-1-5500-index-html-2023-11-13-23_09_48.png)
 
 ## Link to Deployed Attributes
 https://hjenp22.github.io/CodingChallenger/
