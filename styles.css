@@ -1,5 +1,3 @@
-/* Add this to your styles.css */
-
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -53,12 +51,10 @@ button {
     border-radius: 8px;
 }
 
-/* Additional styles for specific sections if needed */
 #currentWeather h3, #forecast h3, #searchHistory h3, #weeklyForecast h3 {
     margin-bottom: 10px;
 }
 
-/* Styles for current weather */
 #currentWeather h3 {
     background-color: #007bff;
     color: #fff;
@@ -66,7 +62,6 @@ button {
     border-radius: 5px;
 }
 
-/* Styles for forecast */
 #forecast h3 {
     background-color: #007bff;
     color: #fff;
@@ -74,7 +69,6 @@ button {
     border-radius: 5px;
 }
 
-/* Styles for search history */
 #searchHistory h3 {
     background-color: #007bff;
     color: #fff;
@@ -82,7 +76,6 @@ button {
     border-radius: 5px;
 }
 
-/* Styles for weekly forecast */
 #weeklyForecast h3 {
     background-color: #007bff;
     color: #fff;
