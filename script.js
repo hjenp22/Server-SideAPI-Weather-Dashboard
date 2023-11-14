@@ -1,7 +1,7 @@
-const apiKey = "73b0cba1ba046852f98801a447debff3"; 
+const apiKey = "73b0cba1ba046852f98801a447debff3"; //open weather
 const city = 'destination'
 
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+const apiUrl = `https:api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
 async function getWeatherData(city) {
     const response = await fetch(`${apiUrl}?q=${city}&appid=${"73b0cba1ba046852f98801a447debff3"}`);
@@ -23,7 +23,6 @@ function updateCurrentWeather(data) {
     currentWeatherContainer.innerHTML = `
         <h2>${city}</h2>
         <p>Date: ${date.toDateString()}</p>
-        <img src="https://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
         <p>Temperature: ${temperature}°C</p>
         <p>Humidity: ${humidity}%</p>
         <p>Wind Speed: ${windSpeed} m/s</p>
