@@ -19,7 +19,7 @@ Using new skillsets to create a weather dashboard to plan a trip accordingly.
 ![weather dashboard](screencapture-127-0-0-1-5500-index-html-2023-11-13-23_09_48.png)
 
 ## Link to Deployed Attributes
-https://hjenp22.github.io/CodingChallenger/
+https://hjenp22.github.io/missWeatherman/
  
 ## About the Author
 - Email: hjipark22@gmail.com
