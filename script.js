@@ -1,7 +1,8 @@
 const apiKey = "73b0cba1ba046852f98801a447debff3"; //open weather
 const city = 'destination'
 
-const apiUrl = `https:api.openweathermap.org/data/2.5/weather?q=${city}&appid=${"73b0cba1ba046852f98801a447debff3"}`;
+// Fix the apiUrl
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 // Function to fetch weather data
 async function getWeatherData(city) {
     const response = await fetch(`${apiUrl}?q=${city}&appid=${"73b0cba1ba046852f98801a447debff3"}`);
@@ -14,12 +15,13 @@ function updateCurrentWeather(data) {
     const currentWeatherContainer = document.getElementById('currentWeather');
 
     // Extract relevant data from the API response
-    const city = data.city.name;
-    const date = new Date(data.list[0].dt * 1000); // Convert timestamp to date
-    const icon = data.list[0].weather[0].icon;
-    const temperature = data.list[0].main.temp;
-    const humidity = data.list[0].main.humidity;
-    const windSpeed = data.list[0].wind.speed;
+    const cityName = data.name;
+    const date = new Date(data.dt * 1000);
+    const icon = data.weather[0].icon;
+    const temperature = data.main.temp;
+    const humidity = data.main.humidity;
+    const windSpeed = data.wind.speed;
+
 
     // Update HTML dynamically with current weather data
     currentWeatherContainer.innerHTML = `
@@ -35,12 +37,16 @@ function updateCurrentWeather(data) {
 // Function to update forecast
 function updateForecast(data) {
     const forecastContainer = document.getElementById('forecast');
+    const weeklyForecastContainer = document.getElementById('weeklyForecast');
+
+    forecastContainer.innerHTML = '';
+    weeklyForecastContainer.innerHTML = '<h2>Weekly Firecase</h2>';
 
     // Iterate over the 5-day forecast data and update HTML dynamically
     let forecastHTML = '<h2>5-Day Forecast</h2>';
-    for (let i = 0; i < data.list.length; i += 8) { // Data is provided in 3-hour intervals, so skip 8 entries for daily forecast
+    for (let i = 0; i < data.list.length; i += 8) { 
         const date = new Date(data.list[i].dt * 1000);
-        const icon = data.list[i].weather[0].icon;
+        const icon = data.list[i].weather.icon;
         const temperature = data.list[i].main.temp;
         const windSpeed = data.list[i].wind.speed;
         const humidity = data.list[i].main.humidity;
