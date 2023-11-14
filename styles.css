@@ -1,0 +1,76 @@
+/* Add this to your styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#currentWeather, #forecast, #searchHistory {
+    margin-top: 20px;
+}
+
+/* Styles for current weather */
+#currentWeather h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#currentWeather img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Styles for forecast */
+.forecast-day {
+    margin-bottom: 20px;
+}
+
+.forecast-day img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Styles for search history */
+#searchHistory button {
+    margin-right: 10px;
+    background-color: #ddd;
+    color: #333;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#searchHistory button:hover {
+    background-color: #ccc;
+}
