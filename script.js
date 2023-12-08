@@ -1,6 +1,6 @@
 // const apiKey = "73b0cba1ba046852f98801a447debff3"; //open weather
 // const city = 'destination'
-
+// const apiKey = "73b0cba1ba046852f98801a447debff3";
 // const apiUrl = `https:api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
 // async function getWeatherData(city) {
@@ -148,3 +148,16 @@ function seachCity(cityName) {
         });
 }
 
+function fetchWeatherData(cityName) {
+    const apiKey = "73b0cba1ba046852f98801a447debff3";
+    const weatherUrl = `https:api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+    return fetch(weatherUrl)
+        .then((response)=> response.json())
+        .then((weatherData) => {
+            const {lat, lon} = weatherData.coord;
+            const forecastUrl = `https:api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+            return fetch(forecastUrl).then((response) => response.json());
+        });
+}
