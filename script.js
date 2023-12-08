@@ -97,3 +97,10 @@
 //     searchHistoryContainer.appendChild(button);
 // }
 
+//
+
+const queryInput = document.querySelector('#query');
+const searchButton = document.querySelector('#searchButton');
+const currentWeatherDiv = document.querySelector('#currentWeather');
+const forecastDiv = document.querySelector('#forecastContainer');
+const currentWeatherContainer = 

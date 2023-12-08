@@ -13,20 +13,29 @@
     <div class="container">
         <h2>Search Current Weather</h2>
         <form id="searchForm">
-            <input type="text" id="cityInput" placeholder="Enter city name" required>
-            <button type="submit">Search</button>
+            <input type="text" id="query" placeholder="Enter city name" required>
+            <button type="submit" id="searchButton">Search</button>
         </form>
-        <div id="currentWeather"></div>
+
+        <div id="currentWeatherContainer">
             <h3>Current Weather</h3>
-        
-        <div id="forecast"></div>
-            <h3>Today's Forcast</h3>
+            <div id="currentWeather"></div>
+        </div>
 
-        <div id="searchHistory"></div>
+        <div id="forecastContainer">
+            <h3>Today's Forecast</h3>
+            <div id="forecast"></div>
+        </div>
+
+        <div id="searchHistoryContainer">
             <h3>Search History</h3>
+            <div id="searchHistory"></div>
+        </div>
 
-        <div id="weeklyForecast"></div>
+        <div id="weeklyForecastContainer">
             <h3>This Week's Forecast</h3>
+            <div id="weeklyForecast"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
