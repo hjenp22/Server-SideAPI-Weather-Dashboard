@@ -138,10 +138,13 @@ function searchCityEvent(event) {
 
 function seachCity(cityName) {
     appendNewCity(cityName);
+
     fetchWeatherData(cityName)
-        .then((data)=>);
-    })
-    .catch((error)=> {
-        console.error('Error while fectching weather data', error);
-    });
+        .then((data)=> {
+            displayWeatherData(data);
+        })
+        .catch((error)=> {
+            console.error('Error while fetching the weather data:', error);
+        });
 }
+
