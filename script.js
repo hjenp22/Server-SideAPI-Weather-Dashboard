@@ -130,3 +130,18 @@ function appendNewCity(cityName) {
     }
 }
 
+function searchCityEvent(event) {
+    event.preventDefault();
+    const cityName = queryInput.Value;
+    searchCity(cityName);
+}
+
+function seachCity(cityName) {
+    appendNewCity(cityName);
+    fetchWeatherData(cityName)
+        .then((data)=>);
+    })
+    .catch((error)=> {
+        console.error('Error while fectching weather data', error);
+    });
+}
