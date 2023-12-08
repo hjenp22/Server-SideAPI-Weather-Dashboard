@@ -103,4 +103,30 @@ const queryInput = document.querySelector('#query');
 const searchButton = document.querySelector('#searchButton');
 const currentWeatherDiv = document.querySelector('#currentWeather');
 const forecastDiv = document.querySelector('#forecastContainer');
-const currentWeatherContainer = 
+const currentWeatherContainer = document.querySelector('#currentWeatherContainer');
+const searchHistoryContainer = document.querySelector('#searchHistory');
+
+let cityNameSearched = JSON.parse(localStorage.getIten('cityNames')) || [];
+
+function renderSearchCities() {
+    for (const cityName of cityNameSearched) {
+        const cityButton = createCityButton(cityName);
+        searchHistoryContainer.append(cityButton);
+    }
+}
+
+function createCityButton(cityName) {
+    const cityButton = document.createElement('button');
+    cityButton.textContent = cityName;
+    return cityButton;
+}
+
+function appendNewCity(cityName) {
+    if (!cityNameSearched.includes(cityName)) {
+        const cityButton = createCityButton(cityName);
+        searchHistoryContainer.append(cityButton);
+        cityNameSearched.push(cityName);
+        localStorage.setItem("cityNames", JSON.stringify(cityNameSearched));
+    }
+}
+
