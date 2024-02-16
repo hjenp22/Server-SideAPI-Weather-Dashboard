@@ -106,7 +106,7 @@ const forecastDiv = document.querySelector('#forecastContainer');
 const currentWeatherContainer = document.querySelector('#currentWeatherContainer');
 const searchHistoryContainer = document.querySelector('#searchHistory');
 
-let cityNameSearched = JSON.parse(localStorage.getIten('cityNames')) || [];
+let cityNameSearched = JSON.parse(localStorage.getItem('cityNames')) || [];
 
 function renderSearchCities() {
     for (const cityName of cityNameSearched) {
@@ -132,7 +132,7 @@ function appendNewCity(cityName) {
 
 function searchCityEvent(event) {
     event.preventDefault();
-    const cityName = queryInput.Value;
+    const cityName = queryInput.value;
     searchCity(cityName);
 }
 
@@ -150,14 +150,46 @@ function seachCity(cityName) {
 
 function fetchWeatherData(cityName) {
     const apiKey = "73b0cba1ba046852f98801a447debff3";
-    const weatherUrl = `https:api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
     return fetch(weatherUrl)
         .then((response)=> response.json())
         .then((weatherData) => {
             const {lat, lon} = weatherData.coord;
-            const forecastUrl = `https:api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+            const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast';
 
             return fetch(forecastUrl).then((response) => response.json());
         });
 }
+
+function displayWeatherData(data) {
+    clearPreviousResults();
+
+    const cityTitle = document.createElement("h2");
+    cityTitle.textContent = `${data.city.name}`;
+    currentWeatherDiv.appendChild(cityTitle);
+
+    const currentWeather = data.list[0];
+    displayWeather(currentWeather, currentWeatherContainer);
+
+    for (let i = 6; i < data.list.length; i +=6) {
+    displayWeatherData(data.list[i], forecastDiv); 
+    }
+}
+
+function clearPreviousResults() {
+    currentWeatherDiv.innerHTML = "";
+    forecastDiv.innerHTML = "";
+    currentWeatherContainer.innerHTML = "";
+    forecastContainer.innerHTML = "";
+}
+
+searchButton.addEventListener("click", searchCityEvent);
+
+searchHistoryContainer.addEventListener("click", (event) => {
+    event.preventDefault();
+    const cityName = event.target.textContent;
+    searchCity(cityName);
+});
+
+renderSearchedCities();
