@@ -12,32 +12,37 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <div class="container">
+    <div class="container row">
         <!-- Search Section -->
-        <div class="searchSection">
+        <div class="searchSection col-3">
             <form class="city">
                 <h2>Search for City</h2>
                 <input class="form-control" id="query" type="text" placeholder="Type City Here">
                 <br>
                 <button class="btn btn-primary" id="searchButton">Search</button>
             </form>
+            <hr>
+            <div id="searchHistory"></div>
         </div>
 
-        <!-- Current Weather Section -->
-        <h2>Current Weather</h2>
-        <div class="weather-container">
-            <div class="current">
-                <div id="currentWeather"></div>
-                <div id="currentWeatherContainer"></div>
+
+        <div class="col-9">
+            <!-- Current Weather Section -->
+            <div class="weather-container">
+                <h2>Current Weather</h2>
+                <div class="current">
+                    <div id="currentWeather"></div>
+                    <div id="currentWeatherContainer"></div>
+                </div>
             </div>
-        </div>
-
-        <!-- 5-Day Forecast Section -->
-        <h2>5-Day Forecast</h2>
-        <div class="forecast">
-            <div class="current">
-                <div id="forecast"></div>
-                <div id="forecastContainer"></div>
+    
+            <!-- 5-Day Forecast Section -->
+            <div class="forecast">
+                <h2>5-Day Forecast</h2>
+                <div class="current">
+                    <!-- <div id="forecast"></div> -->
+                    <div id="forecastContainer" class="row"></div>
+                </div>
             </div>
         </div>
     </div>
