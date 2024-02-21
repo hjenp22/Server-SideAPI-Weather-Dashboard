@@ -127,7 +127,7 @@ function displayForecastWeather(forecast, container) {
   const forecastInfo = document.createElement("p");
   forecastInfo.textContent = `Date: ${date.toLocaleDateString()},
       Temperature: ${temp} F,
-      Wind Speed: ${speed} mph,
+      Wind Speed: ${speed} mph,1  q
       Humidity: ${humidity}%,
       Description: ${description}`;
 
